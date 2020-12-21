@@ -77,21 +77,6 @@ public class SampleActionTest {
 	}
 
 	@Test
-	public void testCheckError4() {
-		HttpServletRequest request = createMock(HttpServletRequest.class);
-		SampleAction action = new SampleAction();
-
-		expect(request.getParameter("FirstName")).andReturn("firstName");
-		expect(request.getParameter("LastName")).andReturn("");
-
-		replay(request);
-		boolean result = action.checkParameter(request);
-		verify(request);
-
-		assertEquals(false, result);
-	}
-	
-	@Test
 	public void testExecuteNormal() {
 		SampleAction action = new SampleAction("firstName", "lastName");
 		HttpServletRequest request = createMock(HttpServletRequest.class);
@@ -106,3 +91,19 @@ public class SampleActionTest {
 		assertTrue("./WEB-INF/result.jsp".equals(result));
 	}
 }
+	
+	@Test
+	public void testCheckError4() {
+		HttpServletRequest request = createMock(HttpServletRequest.class);
+		SampleAction action = new SampleAction();
+
+		expect(request.getParameter("FirstName")).andReturn("firstName");
+		expect(request.getParameter("LastName")).andReturn("");
+
+		replay(request);
+		boolean result = action.checkParameter(request);
+		verify(request);
+
+		assertEquals(false, result);
+	}
+	
