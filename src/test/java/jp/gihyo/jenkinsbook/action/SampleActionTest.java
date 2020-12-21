@@ -55,6 +55,8 @@ public class SampleActionTest {
 		expect(request.getParameter("FirstName")).andReturn("firstName");
 		expect(request.getParameter("LastName")).andReturn(null);
 
+		expect(request.getParameter("LastName")).andReturn("lastName");
+
 		replay(request);
 		boolean result = action.checkParameter(request);
 		verify(request);
@@ -83,7 +85,6 @@ public class SampleActionTest {
 		HttpSession session = createMock(HttpSession.class);
 
 		expect(request.getSession(true)).andReturn(session);
-		expect(request.getSession(false)).andReturn(session);
 
 		replay(request);
 		String result = action.execute(request);
