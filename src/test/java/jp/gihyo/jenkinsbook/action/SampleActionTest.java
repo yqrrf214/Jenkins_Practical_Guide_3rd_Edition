@@ -90,8 +90,8 @@ public class SampleActionTest {
 
 		assertTrue("./WEB-INF/result.jsp".equals(result));
 	}
-}
-	
+
+        #Additions	
 	@Test
 	public void testCheckError4() {
 		HttpServletRequest request = createMock(HttpServletRequest.class);
@@ -106,4 +106,4 @@ public class SampleActionTest {
 
 		assertEquals(false, result);
 	}
-	
+}
