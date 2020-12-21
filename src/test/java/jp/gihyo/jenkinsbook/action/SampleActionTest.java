@@ -55,8 +55,6 @@ public class SampleActionTest {
 		expect(request.getParameter("FirstName")).andReturn("firstName");
 		expect(request.getParameter("LastName")).andReturn(null);
 
-		expect(request.getParameter("LastName")).andReturn("lastName");
-
 		replay(request);
 		boolean result = action.checkParameter(request);
 		verify(request);
@@ -70,6 +68,7 @@ public class SampleActionTest {
 		HttpServletRequest request = createMock(HttpServletRequest.class);
 
 		expect(request.getParameter("FirstName")).andReturn("");
+		expect(request.getParameter("LastName")).andReturn("");
 
 		replay(request);
 		boolean result = action.checkParameter(request);
