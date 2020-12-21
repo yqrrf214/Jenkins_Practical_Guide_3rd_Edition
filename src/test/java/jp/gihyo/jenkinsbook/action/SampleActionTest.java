@@ -76,11 +76,12 @@ public class SampleActionTest {
 		assertEquals(false, result);
 	}
 
-        @Test
+	@Test
 	public void testCheckError4() {
-		SampleAction action = new SampleAction();
 		HttpServletRequest request = createMock(HttpServletRequest.class);
+		SampleAction action = new SampleAction();
 
+		expect(request.getParameter("FirstName")).andReturn("firstName");
 		expect(request.getParameter("LastName")).andReturn("");
 
 		replay(request);
@@ -89,7 +90,7 @@ public class SampleActionTest {
 
 		assertEquals(false, result);
 	}
-
+	
 	@Test
 	public void testExecuteNormal() {
 		SampleAction action = new SampleAction("firstName", "lastName");
