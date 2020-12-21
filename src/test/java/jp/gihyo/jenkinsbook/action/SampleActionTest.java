@@ -77,26 +77,13 @@ public class SampleActionTest {
 	}
 
 	@Test
-	public void testCheckError4() {
-		SampleAction action = new SampleAction();
-		HttpServletRequest request = createMock(HttpServletRequest.class);
-
-		expect(request.getParameter("LastName")).andReturn("");
-
-		replay(request);
-		boolean result = action.checkParameter(request);
-		verify(request);
-
-		assertEquals(false, result);
-	}
-
-	@Test
 	public void testExecuteNormal() {
 		SampleAction action = new SampleAction("firstName", "lastName");
 		HttpServletRequest request = createMock(HttpServletRequest.class);
 		HttpSession session = createMock(HttpSession.class);
 
 		expect(request.getSession(true)).andReturn(session);
+		expect(request.getSession(false)).andReturn(session);
 
 		replay(request);
 		String result = action.execute(request);
