@@ -74,7 +74,7 @@ public class SampleAction {
            dto.setMessage("Good afternoon");
         }
 
-        HttpSession sesssions = request.getSession(true);
+        HttpSession sessions = request.getSession(true);
         session.setAttribute("dto", dto);
 
         return "./WEB-INF/result.jsp";
