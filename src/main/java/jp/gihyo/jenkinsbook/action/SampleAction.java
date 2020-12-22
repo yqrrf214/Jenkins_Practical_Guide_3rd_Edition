@@ -67,17 +67,17 @@ public class SampleAction {
 
         //select the greeting message according to the time
         Calendar calendar = Calendar.getInstance();
-        int hour = calendar.get(calendar.HOUR_OF_DAY)
+        int hour = calendar.get(calendar.HOUR_OF_DAY);
         if (hour <12) {
            dto.setMessage("Good morning");
         } else {
            dto.setMessage("Good afternoon");
         }
 
-        HttpSession sesssions = request.getSession(true)
+        HttpSession sesssions = request.getSession(true);
         session.setAttribute("dto", dto);
 
-        return "./WEB-INF/result.jsp/";
+        return "./WEB-INF/result.jsp";
      }
 }
 
