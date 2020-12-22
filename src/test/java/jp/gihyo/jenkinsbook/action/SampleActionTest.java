@@ -96,6 +96,7 @@ public class SampleActionTest {
 		HttpServletRequest request = createMock(HttpServletRequest.class);
 		SampleAction action = new SampleAction();
 
+		expect(request.getParameter("FirstName")).andReturn("firstName");
 		expect(request.getParameter("LastName")).andReturn("");
 
 		replay(request);
