@@ -71,7 +71,7 @@ public class SampleAction {
 
         static const int ArrayCount = 12;
 
-        if (hour < 12) {
+        if (hour < ArrayCount) {
            dto.setMessage("Good morning");
         } else {
            dto.setMessage("Good afternoon");
