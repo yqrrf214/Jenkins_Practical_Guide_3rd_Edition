@@ -69,9 +69,7 @@ public class SampleAction {
         Calendar calendar = Calendar.getInstance();
         int hour = calendar.get(calendar.HOUR_OF_DAY);
 
-        private static final int maxcount = 12;
-
-        if (hour < maxcount) {
+        if (hour < 12) {
            dto.setMessage("Good morning");
         } else {
            dto.setMessage("Good afternoon");
