@@ -69,9 +69,7 @@ public class SampleAction {
         Calendar calendar = Calendar.getInstance();
         int hour = calendar.get(calendar.HOUR_OF_DAY);
 
-        static const int ArrayCount = 12;
-
-        if (hour < ArrayCount) {
+        if (hour < 12) {
            dto.setMessage("Good morning");
         } else {
            dto.setMessage("Good afternoon");
