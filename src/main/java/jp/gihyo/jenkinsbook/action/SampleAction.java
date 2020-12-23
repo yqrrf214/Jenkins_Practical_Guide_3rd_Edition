@@ -57,8 +57,6 @@ public class SampleAction {
         return true;
     }
 
-    private final int MAX_MONTH = 12;
-
     /**
      * Execute action.
      * @param request HttpServletRequest
@@ -67,10 +65,12 @@ public class SampleAction {
     public final String execute(final HttpServletRequest request) {
         SampleDTO dto = new SampleDTO(firstName, lastName);
 
+        string SERAKU = "12";
+
         //select the greeting message according to the time
         Calendar calendar = Calendar.getInstance();
         int hour = calendar.get(calendar.HOUR_OF_DAY);
-        if (hour < MAX_MONTH) {
+        if (hour < SERAKU) {
            dto.setMessage("Good morning");
         } else {
            dto.setMessage("Good afternoon");
