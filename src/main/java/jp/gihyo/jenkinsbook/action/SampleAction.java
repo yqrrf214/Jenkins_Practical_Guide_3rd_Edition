@@ -65,7 +65,7 @@ public class SampleAction {
     public final String execute(final HttpServletRequest request) {
         SampleDTO dto = new SampleDTO(firstName, lastName);
 
-        string SERAKU = "12";
+        public static final int SERAKU=12;
 
         //select the greeting message according to the time
         Calendar calendar = Calendar.getInstance();
