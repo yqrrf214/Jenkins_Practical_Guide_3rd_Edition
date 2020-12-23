@@ -65,12 +65,13 @@ public class SampleAction {
     public final String execute(final HttpServletRequest request) {
         SampleDTO dto = new SampleDTO(firstName, lastName);
 
-        public static final int SERAKU=12;
-
         //select the greeting message according to the time
         Calendar calendar = Calendar.getInstance();
         int hour = calendar.get(calendar.HOUR_OF_DAY);
-        if (hour < SERAKU) {
+
+        static const int ArrayCount = 12;
+
+        if (hour < 12) {
            dto.setMessage("Good morning");
         } else {
            dto.setMessage("Good afternoon");
